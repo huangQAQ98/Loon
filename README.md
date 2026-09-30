@@ -7,7 +7,6 @@
 - [仓库说明](#仓库说明)
 - [使用声明](#使用声明)
 - [配置模板](#配置模板)
-- [机场推荐](#机场推荐)
 - [插件列表](#插件列表)
 - [特别致谢](#特别致谢)
 - [星标历史](#星标历史)
@@ -69,7 +68,7 @@
 
 
 
-## 恩秀插件列表
+## 插件列表
 
 > [!NOTE]
 > 访问 [Loon插件仓库](https://loonlab.103516.xyz/Plugin/)，获取最新的 Loon 插件，点击插件卡片即可快速跳转安装。
@@ -194,9 +193,7 @@
 - [Orz-3/mini](https://github.com/Orz-3/mini) - 分流图标
 - [fmz200/wool_scripts](https://github.com/fmz200/wool_scripts) - 图标资源
 
-## License
 
-[MIT](LICENSE)
 ## 星标历史
 
 <a href="https://www.star-history.com/?repos=sooyaaabo%2FLoonLab&type=date&legend=top-left">
