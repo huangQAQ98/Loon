@@ -1,0 +1,27 @@
+[Plugin]
+#!name=黑料网净化
+ #!desc=黑料纯享版，黑料不打烊，去恶心的开屏，首页各种乱七八糟的玩意。
+ #!author=ZenmoFeiShi[https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.snippet]
+ #!openUrl=https://155.fun/
+ #!homepage=https://github.com/ZenmoFeiShi
+ #!icon=
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-9-21
+
+[MITM]
+hostname = *heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com
+
+[URL Rewrite]
+^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) header (\r\n)Accept-Encoding:.+(\r\n) $1Accept-Encoding: identity$2
+
+[Script]
+http-response ^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.js, requires-body=true, tag=黑料不打烊净化
+
+[Reject]
+^https?:\/\/stats\.kwvprfcr\.xyz url reject
+^https?:\/\/mc\.yandex\.ru url reject
+^https?:\/\/api1\.cghhqca\.cc\/api\/eventTracking url reject-dict
+^https?:\/\/api\.shuifeng\.cc\/api\/eventTracking url reject-dict
+^https?:\/\/ads\.zyudkkup\.com\/api\/eventTracking url reject-dict
+^https?:\/\/static\.cloudflareinsights\.com\/beacon url reject
