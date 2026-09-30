@@ -1,7 +1,13 @@
+[Plugin]
 #!name=蛋蛋不语VIP解锁
-#!desc=解锁蛋蛋不语VIP会员功能
-#!author=Curtinp118
-#!homepage=https://github.com/curtinp118/Loon
+ #!desc=解锁蛋蛋不语VIP会员功能
+ #!author=Curtinp118[https://github.com/curtinp118/Loon]
+ #!openUrl=https://github.com/curtinp118/Loon
+ #!homepage=https://github.com/curtinp118/Loon
+ #!icon=
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(1004)
+#!date = 2026-9-30
 
 [Rule]
 # 蛋蛋不语
