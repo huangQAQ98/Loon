@@ -9,8 +9,6 @@
 - [配置模板](#配置模板)
 - [插件列表](#插件列表)
 - [特别致谢](#特别致谢)
-- [星标历史](#星标历史)
-
 
 ## 仓库说明
 
@@ -194,12 +192,4 @@
 - [fmz200/wool_scripts](https://github.com/fmz200/wool_scripts) - 图标资源
 
 
-## 星标历史
 
-<a href="https://www.star-history.com/?repos=sooyaaabo%2FLoonLab&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=sooyaaabo/LoonLab&type=date&theme=dark&legend=top-left&sealed_token=TYZFjrCGRwZFlCtOocK9LTQiD9YgQkI7L7xrH9NQI1KBuQQ9KoRG6J1LGqtCEw3fExvJ28epu3U5bjQpayKdvdOE8uOX55Q4xfMTEkLPPO6FfigkRIsgAbiBRh-p4KRj9LGuTqCA3wKmjyljn5kium3-H0kTe_zbzeOvuN_-g9icBnkB2q2aq8-8Vg_-" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=sooyaaabo/LoonLab&type=date&legend=top-left&sealed_token=TYZFjrCGRwZFlCtOocK9LTQiD9YgQkI7L7xrH9NQI1KBuQQ9KoRG6J1LGqtCEw3fExvJ28epu3U5bjQpayKdvdOE8uOX55Q4xfMTEkLPPO6FfigkRIsgAbiBRh-p4KRj9LGuTqCA3wKmjyljn5kium3-H0kTe_zbzeOvuN_-g9icBnkB2q2aq8-8Vg_-" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=sooyaaabo/LoonLab&type=date&legend=top-left&sealed_token=TYZFjrCGRwZFlCtOocK9LTQiD9YgQkI7L7xrH9NQI1KBuQQ9KoRG6J1LGqtCEw3fExvJ28epu3U5bjQpayKdvdOE8uOX55Q4xfMTEkLPPO6FfigkRIsgAbiBRh-p4KRj9LGuTqCA3wKmjyljn5kium3-H0kTe_zbzeOvuN_-g9icBnkB2q2aq8-8Vg_-" />
- </picture>
-</a>
