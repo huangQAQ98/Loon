@@ -1,14 +1,14 @@
 [Plugin]
 #!name = NBPro去广告
 #!desc = 净化开屏、首页、我的及安装场景广告，保留签名、定位与应用降级等核心功能
-#!openUrl = https://155.fun/
+#!openUrl = https://github.com/huangQAQ98/Loon
 #!author =ddgksf2013
 #!tag = 去广告
 #!homepage =https://ddgksf2013.top
 #!icon = 
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-9-21
+#!date = 2026-9-30
 [MITM]
 hostname = nbtool8.com, 124.222.32.246, 117.72.39.157, cesapp.goypzc.cn, 47.243.71.210
 
