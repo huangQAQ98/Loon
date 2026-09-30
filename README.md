@@ -2,18 +2,6 @@
 
 个人 Loon 代理配置，包含主配置、插件、脚本和规则集。
 
-## 目录结构
-
-```
-Loon/
-├── profile/          # 主配置文件
-├── plugins/          # 插件模块
-├── scripts/          # JavaScript 脚本
-└── rules/            # 规则集
-```
-
-# LoonLab
-
 
 ## 目录
 - [仓库说明](#仓库说明)
