@@ -1,0 +1,53 @@
+[Plugin]
+#!name = NBPro去广告
+#!desc = 净化开屏、首页、我的及安装场景广告，保留签名、定位与应用降级等核心功能
+#!openUrl = https://155.fun/
+#!author =ddgksf2013
+#!tag = 去广告
+#!homepage =https://ddgksf2013.top
+#!icon = 
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-9-21
+[MITM]
+hostname = nbtool8.com, 124.222.32.246, 117.72.39.157, cesapp.goypzc.cn, 47.243.71.210
+
+[Rule]
+DOMAIN,capsinfo.anythink.com,REJECT
+DOMAIN,showtime.anythink.com,REJECT
+DOMAIN,api.bridgeoos.com,REJECT
+DOMAIN,pitk.birdgesdk.com,REJECT
+DOMAIN,aa.birdgesdk.com,REJECT
+DOMAIN,fusion-static.oss-cn-shenzhen.aliyuncs.com,REJECT
+DOMAIN,mobads.baidu.com,REJECT
+DOMAIN,cpu.baidu.com,REJECT
+DOMAIN,cpu-openapi.baidu.com,REJECT
+DOMAIN,mobads-pre-config.bj.bcebos.com,REJECT
+DOMAIN,mobads-pre-config.cdn.bcebos.com,REJECT
+DOMAIN,cpro.baidustatic.com,REJECT
+DOMAIN,render-server.cdn.bcebos.com,REJECT
+DOMAIN,adservice.sigmob.cn,REJECT
+DOMAIN,api.htp.ad-scope.com.cn,REJECT
+DOMAIN,bid.ad-scope.com.cn,REJECT
+DOMAIN,api-htp.beizi.biz,REJECT
+DOMAIN,sdk.beizi.biz,REJECT
+DOMAIN,sdktmp.hubcloud.com.cn,REJECT
+DOMAIN,sdk.zhangyuyidong.cn,REJECT
+DOMAIN,sdk6.zhangyuyidong.cn,REJECT
+DOMAIN,sdkcfg.adintl.cn,REJECT
+DOMAIN,test.s.adintl.cn,REJECT
+DOMAIN,api-cfg.8ziben.com,REJECT
+DOMAIN,api-incentive.8ziben.com,REJECT
+DOMAIN,static.8ziben.com,REJECT
+DOMAIN,opehs.tanx.com,REJECT
+DOMAIN,videoproxy.tanx.com,REJECT
+DOMAIN,c.etoolads.cn,REJECT
+DOMAIN,sdk.adx.adwangmai.com,REJECT
+DOMAIN,sdk-cfg.adx.adwangmai.com,REJECT
+DOMAIN,static.adwangmai.com,REJECT
+DOMAIN,open.e.kuaishou.com,REJECT
+DOMAIN,open.e.kuaishou.cn,REJECT
+DOMAIN,s.e.kuaishou.com,REJECT
+
+[Script]
+http-response ^https?:\/\/(?:nbtool8\.com(?::(?:9527|9666))?|124\.222\.32\.246(?::9527)?|117\.72\.39\.157(?::9527)?|cesapp\.goypzc\.cn(?::9527)?|47\.243\.71\.210(?::9527)?)\/nb\/app(?:\?.*)?$ script-path=https://ddgksf2013.top/scripts/nbpro.ads.js, requires-body=true, tag=NBPro去广告
