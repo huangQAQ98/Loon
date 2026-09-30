@@ -1,0 +1,55 @@
+[Plugin]
+#!name=鲍鱼盒子
+ #!desc=鲍鱼盒子会员解锁;广告净化
+ #!author=知性[https://knowsex.net],官网[https://Juhe.Live],频道[https://t.me/GieGie777],GieGie[https://raw.githubusercontent.com/WeiGiegie/666/main/byhz.js]
+ #!openUrl=https://Juhe.Live
+ #!homepage=https://he2o.vercel.app/Resource/About#
+ #!icon=https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/26/fa/d4/26fad417-aa4e-fa8c-c235-5780ad75a78e/AppIcon-0-0-2x_U007epad-0-6-0-0-85-220.png/167x167bb.png
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(1004)
+#!date = 2026-9-30
+[Argument]
+VIP = switch, false, tag = [启用]会员, desc = 关闭开关将不对此选项生效
+
+Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 必填
+
+[Rewrite]
+^https?://siajksslwiso\.anningsh\.com/report url reject-200
+
+[Script]
+http-request ^https?:\/\/.+\/api\/(video\/report_item?|live\/room\/detail?|video\/related?|video\/detail|socialposts_info|my\/profile) script-path=https://he2o.vercel.app/Resource/Plugin/by.js, requires-body=true, timeout=60, tag=会员, argument=[{Authorization}],enable={VIP}
+
+[Mitm]
+hostname = w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
+*
+*
+*/
+
+
+
+
+
+
+const header = $request.headers;
+
+const authorization = $argument?.Authorization;
+
+if (!authorization) {
+    console.log("参数缺失信息：");
+    if (!authorization) console.log("❌ Authorization 参数缺失");
+
+    $notification.post(
+        "🧧遇到问题",
+        "参数缺失",
+        "请在插件内填入完整的会员数据"
+    );
+
+    $done({});
+    return;
+}
+
+header["authorization"] = "Bearer " + authorization;
+
+console.log("✅ 🧧已解锁 🎉");
+
+$done({ headers: header });
