@@ -5,9 +5,10 @@
 #!openUrl=https://t.me/LKm0907
 #!icon=https://cdn.jsdelivr.net/gh/salem-2007/apple-cert-block@main/icon.png
 #!tag=Apple,Certificate,AntiRevoke
-#!loon_version=3.2.0
+#!loon_version=3.5.2(996)
 #!system=iOS,iPadOS
-#!update-url=https://raw.githubusercontent.com/salem-2007/apple-cert-block/main/AntiRevoke.plugin
+#!date=2026-9-30
+#!update-url=https://github.com/huangQAQ98/Loon
 
 # =========================================
 # AntiRevoke - Core
