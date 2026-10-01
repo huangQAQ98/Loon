@@ -1,0 +1,57 @@
+#!name=酷安
+#!desc=酷安去广告,应用净化
+#!openUrl=https://apps.apple.com/app/id1422581869
+#!author=自有[https://github.com/huangQAQ98/Loon],ddgksf2013[https://ddgksf2013.top]
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1010.png
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-1
+
+
+
+[Rewrite]
+# > 酷安_屏蔽热词@ddgksf2013
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
+
+# > 帖子详情页：清理赞助卡片、商品卡片
+^https:\/\/api\.coolapk\.com\/v6\/feed\/detail\? url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# >  评论列表过滤无效评论
+^https:\/\/api\.coolapk\.com\/v6\/feed\/replyList url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# > 首页dataList 移除sponsorCard广告、精选配件
+^https:\/\/api\.coolapk\.com\/v6\/main\/dataList url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# > page/dataList 过滤话题热议及指定entityId广告
+^https:\/\/api\.coolapk\.com\/v6\/page\/dataList url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# >  main/indexV8 过滤值得买、红包卡片
+^https:\/\/api\.coolapk\.com\/v6\/main\/indexV8 url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# > main/init 首页初始化广告卡片删除
+^https:\/\/api\.coolapk\.com\/v6\/main\/init url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+# > 个人主页卡片配置过滤
+^https:\/\/api\.coolapk\.com\/v6\/account\/loadConfig\?key=my_page_card_config url script-response-body https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js
+
+[Script]
+# > 酷安_开屏广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/main\/init script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_推广广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/dataList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_首页广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_评论广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/replyList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_商品推广@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_酷品页推广@ddgksf2013
+http-response https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+[MITM]
+hostname = api.coolapk.com,  www.coolapk.com
