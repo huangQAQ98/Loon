@@ -15,6 +15,8 @@ kuan_enable = switch,true,false,tag=酷安-脚本开关
 # > 酷安_屏蔽热词@ddgksf2013
 # hostname = api.coolapk.com, www.coolapk.com
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
+# > 酷安_屏蔽热词@ddgksf2013
+^https:\/\/api\.coolapk\.com\/v6\/account\/loadConfig\?key=my_page_card_config response-body-json-jq '.data |= map(select(.entityType != "textLink" and (.entityId != 1001 and .entityId != 1003 and .entityId != 1004 and .entityId != 1005)) | if .entities then .entities |= map(select(.entityType != "textLink")) else . end)'
 
 
 [Script]
