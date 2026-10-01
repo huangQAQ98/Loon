@@ -38,7 +38,8 @@ DOMAIN-SUFFIX, rumble.com, REJECT
 
 [Rewrite]
 # > 酷安_屏蔽热词@ddgksf2013
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
+# hostname = api.coolapk.com, www.coolapk.com
+# ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
 
 
 [Script]
