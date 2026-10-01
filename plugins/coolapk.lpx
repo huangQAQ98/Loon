@@ -27,10 +27,6 @@ http-response ^https?:\/\/api.coolapk.com\/v6\/dataList script-path=https://gith
 # > 酷安_首页广告@ddgksf2013
 http-response ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
 
-
-# > 酷安_商品推广@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
 # > 酷安_酷品页推广@ddgksf2013
 http-response https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
 
