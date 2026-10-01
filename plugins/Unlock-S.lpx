@@ -82,7 +82,7 @@ header["authorization"] = "Bearer " + authorization;
 console.log("✅ 🧧已解锁 🎉");
 
 $done({ headers: header });
-admin.tanweixianzhi.com
+*admin.tanweixianzhi.com
 *
 *
 */
