@@ -14,7 +14,7 @@ kuan_enable = switch,true,false,tag=酷安-脚本开关
 [Rewrite]
 # > 酷安_屏蔽热词@ddgksf2013
 # hostname = api.coolapk.com, www.coolapk.com
-# ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
 
 
 [Script]
