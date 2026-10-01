@@ -8,6 +8,9 @@
 #!loon_version = 3.5.2(996)
 #!date = 2026-10-1
 
+[Argument]
+kuan_enable = switch,true,false,tag=酷安-脚本开关
+
 [Rule]
 # > 广告联盟
 # 若有问题自行设置白名单, REJECT
@@ -37,28 +40,8 @@ DOMAIN-SUFFIX, rumble.com, REJECT
 # > 酷安_屏蔽热词@ddgksf2013
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
 
-# > 酷安
-# hostname = api.coolapk.com, www.coolapk.com
-# ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
 
 [Script]
-# > 酷安_开屏广告@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/main\/init script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
-# > 酷安_推广广告@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/dataList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
-# > 酷安_首页广告@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
-# > 酷安_评论广告@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/replyList script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
-# > 酷安_商品推广@ddgksf2013
-http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
-
-# > 酷安_酷品页推广@ddgksf2013
-http-response https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
 
 # > 酷安
 # hostname = api.coolapk.com, www.coolapk.com
