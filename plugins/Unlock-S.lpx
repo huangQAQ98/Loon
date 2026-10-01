@@ -22,8 +22,6 @@ Video = switch, false, tag = [视频-付费], desc = 关闭开关将不对探味
 DOMAIN,unicef-porn.vercel.app,PROXY
 
 [Rewrite]
-# 黑料网净化
-*heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com
 # 鲍鱼盒子会员
 ^https?://siajksslwiso\.anningsh\.com/report url reject-200
 
@@ -49,7 +47,7 @@ http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info scrip
 ^https?:\/\/ads\.zyudkkup\.com\/api\/eventTracking url reject-dict
 ^https?:\/\/static\.cloudflareinsights\.com\/beacon url reject
 [Mitm]
-hostname = admin.tanweixianzhi.com, *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com,*heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
+hostname = *heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, admin.tanweixianzhi.com, *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com,*heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
 *
 *
 */
