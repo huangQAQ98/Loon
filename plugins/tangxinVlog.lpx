@@ -1,0 +1,18 @@
+[Plugin]
+#!name = 糖心Vlog
+#!desc = 糖心Vlog 解锁点播去除广告
+#!openUrl = https://github.com/huangQAQ98/Loon
+#!author =自有[https://github.com/huangQAQ98/Loon]
+#!tag =18+
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = https://txscript.pages.dev/tx/icon.png
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-08-25
+
+
+[Script]
+http-request ^https?:\/\/((?:[a-z]+\.)?txh\d+\.com)\/(h5\/(?:user\/info|system\/info|movie\/(?:detail|block|search))) script-path=https://txscript.pages.dev/tx/loon.js, tag=糖心解锁, requires-body=true
+
+[Mitm]
+hostname = *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com
