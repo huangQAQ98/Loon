@@ -13,9 +13,9 @@ tangxin_button = switch,false,true,tag=糖心Vlog,desc=关闭开关将不对糖�
 Player = select,"Safari","Filebar","Forward","SenPlayer","yyb","yybx","Alook","Stay",tag=播放器,desc=选择你要使用的播放器
 hlw_button = switch,false,true,tag=黑料网,desc=关闭开关将不对黑料网生效
 VIP = switch, false, tag = 鲍鱼盒子, desc = 关闭开关将不对鲍鱼盒子生效
-Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 必填
+Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 鲍鱼盒子token(必填)
 VIP = switch, false, tag = 探味闲置, desc = 关闭开关将不对探味闲置生效
-Video = switch, false, tag = [视频-付费], desc = 关闭开关将不探味闲置生效
+Video = switch, false, tag = [视频-付费], desc = 关闭开关将不对探味闲置生效
 
 
 [Rule]
