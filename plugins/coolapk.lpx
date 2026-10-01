@@ -3,16 +3,43 @@
 #!openUrl=https://apps.apple.com/app/id1422581869
 #!author=自有[https://github.com/huangQAQ98/Loon],ddgksf2013[https://ddgksf2013.top]
 #!homepage =https://github.com/huangQAQ98/Loon
-#!icon=https://github.com/huangQAQ98/IconLibrary/blob/844b1391aa6b32e3571826484eec965d41fa8ed2/App/CoolApk.png
+#!icon=https://github.com/Toperlock/Quantumult/raw/main/icon/Doraemon/Doraemon-1010.png
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
 #!date = 2026-10-1
 
-
+[Rule]
+# > 广告联盟
+# 若有问题自行设置白名单, REJECT
+DOMAIN-SUFFIX, miaozhen.com, REJECT
+DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
+DOMAIN-KEYWORD, -tos.pstatp.com, REJECT
+DOMAIN-KEYWORD, asiad.byteactivity, REJECT
+DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
+DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
+DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
+DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
+DOMAIN-SUFFIX, getui.com, REJECT
+DOMAIN-SUFFIX, getui.net, REJECT
+DOMAIN-SUFFIX, gepush.com, REJECT
+DOMAIN-SUFFIX, igexin.com, REJECT
+DOMAIN-SUFFIX, log.aliyuncs.com, REJECT
+DOMAIN-SUFFIX, zlsdk.1rtb.net, REJECT
+DOMAIN-SUFFIX, cdntips.net, REJECT
+DOMAIN-SUFFIX, tfogc.com, REJECT
+#DOMAIN-KEYWORD, volc, REJECT
+AND,((NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (NOT,((DOMAIN,vod-settings.volcvod.com))), (NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (OR,((DOMAIN-KEYWORD,volc)))), REJECT
+DOMAIN-KEYWORD, umeng, REJECT
+DOMAIN-SUFFIX, 1a-1791.com, REJECT
+DOMAIN-SUFFIX, rumble.com, REJECT
 
 [Rewrite]
 # > 酷安_屏蔽热词@ddgksf2013
 ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
+
+# > 酷安
+# hostname = api.coolapk.com, www.coolapk.com
+# ^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
 
 [Script]
 # > 酷安_开屏广告@ddgksf2013
@@ -33,25 +60,13 @@ http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://
 # > 酷安_酷品页推广@ddgksf2013
 http-response https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
 
-# > 帖子详情页：清理赞助卡片、商品卡片
-http-response https://api.coolapk.com\/v6\/feed\/detail\? script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
+# > 酷安
+# hostname = api.coolapk.com, www.coolapk.com
+http-response ^https?:\/\/api\.coolapk\.com\/v6\/feed\/(detail|replyList)\? script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true, timeout=60, tag=酷安, enable={kuan_enable}
+http-response ^https?:\/\/api\.coolapk\.com\/v6\/main\/(dataList|indexV8|init) script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true, timeout=60, tag=酷安, enable={kuan_enable}
+http-response ^https?:\/\/api\.coolapk\.com\/v6\/page\/dataList\? script-path=https://raw.githubusercontent.com/fmz200/wool_scripts/main/Scripts/coolapk.js, requires-body=true, timeout=60, tag=酷安, enable={kuan_enable}
+http-request ^https:\/\/www\.coolapk\.com\/link.* script-path=https://raw.githubusercontent.com/VenenoSix24/Ivy-Script/refs/heads/main/Loon/script/Coolapk_Redirect.js, requires-body=false, timeout=10, tag=酷安URL重定向, enable={kuan_enable}
 
-# > 评论列表过滤无效评论
-http-response https://api.coolapk.com\/v6\/feed\/replyList url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
 
-# > 首页移除广告、精选配件
-http-response https://api.coolapk.com\/v6\/main\/dataList url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
-
-# > 过滤话题热议及指定广告
-http-response https://api.coolapk.com\/v6\/page\/dataList url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
-
-# > 过滤值得买、红包卡片
-http-response https://api.coolapk.com\/v6\/main\/indexV8 url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
-
-# > 首页初始化广告卡片删除
-http-response https://api.coolapk.com\/v6\/main\/init url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
-
-# > 个人主页卡片配置过滤
-http-response https://api.coolapk.com\/v6\/account\/loadConfig\?key=my_page_card_config url script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/coolapk.js, requires-body=true,timeout=60
 [MITM]
-hostname = api.coolapk.com,  www.coolapk.com
+hostname = api.coolapk.com,  www.coolapk.com, 
