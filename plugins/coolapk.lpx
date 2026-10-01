@@ -11,31 +11,6 @@
 [Argument]
 kuan_enable = switch,true,false,tag=酷安-脚本开关
 
-[Rule]
-# > 广告联盟
-# 若有问题自行设置白名单, REJECT
-DOMAIN-SUFFIX, miaozhen.com, REJECT
-DOMAIN-KEYWORD, -ad-sign.byteimg.com, REJECT
-DOMAIN-KEYWORD, -tos.pstatp.com, REJECT
-DOMAIN-KEYWORD, asiad.byteactivity, REJECT
-DOMAIN-KEYWORD, pangolin-sdk-toutiao, REJECT
-DOMAIN-KEYWORD, pglstatp-toutiao, REJECT
-DOMAIN-KEYWORD, pangolin.snssdk.com, REJECT
-DOMAIN-KEYWORD, video-cn.snssdk.com, REJECT
-DOMAIN-SUFFIX, getui.com, REJECT
-DOMAIN-SUFFIX, getui.net, REJECT
-DOMAIN-SUFFIX, gepush.com, REJECT
-DOMAIN-SUFFIX, igexin.com, REJECT
-DOMAIN-SUFFIX, log.aliyuncs.com, REJECT
-DOMAIN-SUFFIX, zlsdk.1rtb.net, REJECT
-DOMAIN-SUFFIX, cdntips.net, REJECT
-DOMAIN-SUFFIX, tfogc.com, REJECT
-#DOMAIN-KEYWORD, volc, REJECT
-AND,((NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (NOT,((DOMAIN,vod-settings.volcvod.com))), (NOT,((DOMAIN,volcengine-kdocs-cache.wpscdn.cn))), (OR,((DOMAIN-KEYWORD,volc)))), REJECT
-DOMAIN-KEYWORD, umeng, REJECT
-DOMAIN-SUFFIX, 1a-1791.com, REJECT
-DOMAIN-SUFFIX, rumble.com, REJECT
-
 [Rewrite]
 # > 酷安_屏蔽热词@ddgksf2013
 # hostname = api.coolapk.com, www.coolapk.com
@@ -43,6 +18,8 @@ DOMAIN-SUFFIX, rumble.com, REJECT
 
 
 [Script]
+# > 酷安_首页广告@ddgksf2013
+http-response ^https?:\/\/api.coolapk.com\/v6\/main\/indexV8 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
 
 # > 酷安
 # hostname = api.coolapk.com, www.coolapk.com
