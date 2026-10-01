@@ -14,7 +14,7 @@ kuan_enable = switch,true,false,tag=酷安-脚本开关
 [Rewrite]
 # > 酷安_屏蔽热词@ddgksf2013
 # hostname = api.coolapk.com, www.coolapk.com
-^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch reject-dict
+^https?:\/\/api\.coolapk\.com\/v6\/search\?.*type=hotSearch - reject-200
 
 
 [Script]
@@ -35,6 +35,9 @@ http-response ^https?:\/\/api.coolapk.com\/v6\/feed\/detail script-path=https://
 
 # > 酷安_酷品页推广@ddgksf2013
 http-response https://api.coolapk.com/v6/page/dataList\?.*title=%E9%85 script-path=https://github.com/ddgksf2013/Scripts/raw/master/coolapk.js, requires-body=true, timeout=60, tag=coolapk
+
+# > 酷安_页面数据过滤 = type=
+http-response, pattern=^https://api\.coolapk\.com/v6/page/dataList, requires-body=true, max-size=0, script-path=https://raw.githubusercontent.com/NSRingo/Loon-Script/master/Scripts/JSONResponseJQ.js, argument=if (.data | length > 0) then .data |= map(select((.title? != "酷安热搜") and (.entityTemplate? != "imageScaleCard") and (.entityTemplate? != "sponsorCard"))) else . end
 
 # > 酷安
 # hostname = api.coolapk.com, www.coolapk.com
