@@ -1,0 +1,15 @@
+#!name = Node Detection Tool
+#!desc = 适用于Loon的节点检测工具，可进行IP查询、多媒体检测等
+#!author = Loon
+#!author=自有[https://github.com/huangQAQ98/Loon]
+#!homepage =https://github.com/huangQAQ98/Loon
+#!system = iOS,iPadOS,tvOS,macOS
+#!loon_version = 3.5.1(984)
+#!homepage = https://nsloon.app/docs/intro
+#!icon = https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Available_1.png
+#!date = 2026-10-01
+
+[Script]
+generic then script("https://kelee.one/Resource/JavaScript/Node_detection_tool/NetworkEntryAndExitQueries.js") with tag="入口落地查询", img_url="globe.asia.australia.system", timeout=10
+generic then script("https://kelee.one/Resource/JavaScript/Node_detection_tool/LocationDetection.js") with tag="地理位置查询", img_url="location.circle.system", timeout=10
+generic then script("https://kelee.one/Resource/JavaScript/Node_detection_tool/NodeUnlockDetection.js") with tag="节点解锁查询", img_url="play.circle.system", timeout=20
