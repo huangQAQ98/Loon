@@ -1,0 +1,31 @@
+#!name = 红果短剧广告拦截
+#!desc = 拦截红果短剧及字节系相关广告请求，同时直连内容服务器避免加载异常
+#!openUrl=https://apps.apple.com/app/id6451407032
+#!author=自有[https://github.com/huangQAQ98/Loon]
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = 
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-01
+
+[Rule]
+# 红果核心广告拦截（必加）
+DOMAIN-SUFFIX,hongguoapp.com,REJECT
+DOMAIN-SUFFIX,hongguosdk.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+DOMAIN-KEYWORD,ad-union-sdk,REJECT
+DOMAIN-KEYWORD,be-pack,REJECT
+DOMAIN-KEYWORD,hongguo.ad,REJECT
+
+# 字节系广告兜底（红果隶属字节）
+DOMAIN-SUFFIX,ad.pangle.cn,REJECT
+DOMAIN-SUFFIX,ad.pangolin.cn,REJECT
+DOMAIN-SUFFIX,zijieapi.com,REJECT
+DOMAIN-KEYWORD,tnc.snssdk,REJECT
+
+# 红果内容直连（避免加载异常）
+DOMAIN-SUFFIX,hongguo.com,DIRECT
+DOMAIN-SUFFIX,hongguo.douyin.com,DIRECT
+DOMAIN-SUFFIX,byteimg.com,DIRECT
+DOMAIN-SUFFIX,pstatp.com,DIRECT
