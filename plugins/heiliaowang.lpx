@@ -1,27 +1,34 @@
 [Plugin]
 #!name=黑料网净化
  #!desc=黑料纯享版，黑料不打烊，去恶心的开屏，首页各种乱七八糟的玩意。
- #!author=ZenmoFeiShi[https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.snippet]
+ #!author=ZenmoFeiShi[https://github.com/ZenmoFeiShi/Qx]
  #!openUrl=https://155.fun/
  #!homepage=https://github.com/ZenmoFeiShi
  #!icon=
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-9-21
+#!date = 2026-10-04
 
-[MITM]
-hostname = *heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com
-
-[URL Rewrite]
-^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) header (\r\n)Accept-Encoding:.+(\r\n) $1Accept-Encoding: identity$2
+^https?:\/\/(?:www\.)?97baoliao\.com\/storage\/static\/popup-feed\.json(?:\?.*)?$ - reject-dict
+^https?:\/\/(?:www\.)?97baoliao\.com\/usr\/plugins\/AiSuite\/assets\/js\/adfloat\.js(?:\?.*)?$ - reject
+^https?:\/\/(?:www\.)?97baoliao\.com\/usr\/themes\/Mirages\/js\/7\.10\.0\/bottom_ad_poll\.js(?:\?.*)?$ - reject
+^https?:\/\/stats\.kwvprfcr\.xyz - reject
+^https?:\/\/mc\.yandex\.ru - reject
+^https?:\/\/api1\.cghhqca\.cc\/api\/eventTracking - reject-dict
+^https?:\/\/api\.shuifeng\.cc\/api\/eventTracking - reject-dict
+^https?:\/\/ads\.zyudkkup\.com\/api\/eventTracking - reject-dict
+^https?:\/\/static\.cloudflareinsights\.com\/beacon - reject
+^https?:\/\/(?:www\.)?googletagmanager\.com\/(?:gtag\/js|gtm\.js)(?:\?.*)?$ - reject
+^https?:\/\/(?:www\.)?google-analytics\.com\/ - reject
 
 [Script]
-http-response ^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.js, requires-body=true, tag=黑料不打烊净化
+http-request ^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Encoding%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Encoding%3A%20identity%242
 
-[Reject]
-^https?:\/\/stats\.kwvprfcr\.xyz url reject
-^https?:\/\/mc\.yandex\.ru url reject
-^https?:\/\/api1\.cghhqca\.cc\/api\/eventTracking url reject-dict
-^https?:\/\/api\.shuifeng\.cc\/api\/eventTracking url reject-dict
-^https?:\/\/ads\.zyudkkup\.com\/api\/eventTracking url reject-dict
-^https?:\/\/static\.cloudflareinsights\.com\/beacon url reject
+http-response ^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.js, requires-body=true, timeout=60, tag=hlwxx_remove_ads
+
+http-request ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|favicon\.ico) script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Encoding%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Encoding%3A%20identity%242
+
+http-response ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|favicon\.ico) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.js, requires-body=true, timeout=60, tag=hlwxx_remove_ads
+
+[MITM]
+hostname = *heiliao*, *hlwxx*, *hlcx*, *97baoliao*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, *.googletagmanager.com, *.google-analytics.com
