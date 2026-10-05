@@ -6,13 +6,13 @@
 #!icon= https://he2o.vercel.app/Resource/Icon/baby.png
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-10-04 08:00:00
+#!date = 2026-10-05 08:00:00
 
 [Argument]
 tangxin_button = switch,false,true,tag=糖心Vlog,desc=关闭开关将不对糖心Vlog生效
 Player = select,"Safari","Filebar","Forward","SenPlayer","yyb","yybx","Alook","Stay",tag=播放器,desc=选择你要使用的播放器
 hlw = switch,false,true,tag=黑料网,desc=关闭开关将不对黑料网生效
-VIP = switch, false, tag = 鲍鱼盒子, desc = 关闭开关将不对鲍鱼盒子生效
+baoyu = switch, false, tag = 鲍鱼盒子, desc = 关闭开关将不对鲍鱼盒子生效
 Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 鲍鱼盒子token(必填)
 VIP = switch, false, tag = [启用]会员, desc = 关闭开关将不对探味闲置生效
 Video = switch, false, tag = [视频-付费], desc = 关闭开关将不对探味闲置生效
@@ -28,7 +28,7 @@ DOMAIN,unicef-porn.vercel.app,PROXY
 
 [Script]
 # ========== 糖心Vlog ========== https://txh087.com
-http-request ^https?:\/\/((?:[a-z]+\.)?txh\d+\.com)\/(h5\/(?:user\/info|system\/info|movie\/(?:detail|block|search))) script-path=https://txscript.pages.dev/tx/loon.js, tag=糖心解锁, requires-body=true,timeout=60,tag= 糖心Vlog_解锁会员,enable={tangxin_button}
+http-request ^https?:\/\/((?:[a-z]+\.)?tx\w+\.com)\/(txapi\/(?:user\/info|system\/info|movie\/(?:detail|navBlock|navFilter|blockDetail|similarSearch))) script-path=https://txscript.pages.dev/tx/loon.js, tag=糖心解锁, requires-body=true, binary-body-mode=true,tag= 糖心Vlog_解锁会员,enable={tangxin_button}
 
 # ========== 黑料网 ========== https://155.fun/
 http-request ^https?:\/\/(?:www\.)?(?:heiliao|hlwxx|hlcx\d*)\.com\/(?!static\/|favicon|api\/|index\/statistics|uploads\/) script-path=https://raw.githubusercontent.com/Script-Hub-Org/Script-Hub/main/scripts/replace-header.js, timeout=30, tag=replaceHeader, argument=(%5Cr%5Cn)Accept-Encoding%3A.%2B(%5Cr%5Cn)-%3E%241Accept-Encoding%3A%20identity%242, tag=黑料网, enable={hlw}
@@ -37,7 +37,7 @@ http-request ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|favi
 http-response ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|favicon\.ico) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/hlwxx_remove_ads.js, requires-body=true, timeout=60, tag=黑料网, enable={hlw}
 
 # ========== 鲍鱼盒子========== https://Juhe.Live
-http-request ^https?:\/\/.+\/api\/(video\/report_item?|live\/room\/detail?|video\/related?|video\/detail|socialposts_info|my\/profile) script-path=https://he2o.vercel.app/Resource/Plugin/by.js, requires-body=true, timeout=60, tag=会员, argument=[{Authorization}],enable={VIP}
+http-request ^https?:\/\/.+\/api\/(video\/report_item?|live\/room\/detail?|video\/related?|video\/detail|socialposts_info|my\/profile) script-path=https://he2o.vercel.app/Resource/Plugin/by.js, requires-body=true, timeout=60, tag= 鲍鱼盒子, argument=[{Authorization}],enable={baoyu}
 
 # ========== 探味闲置========== https://apps.apple.com/app/id6746157667
 http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/centre\/userInfo script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=会员, enable={VIP}
@@ -59,7 +59,7 @@ http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info scrip
 ^https?:\/\/(?:www\.)?google-analytics\.com\/ - reject
 
 [Mitm]
-hostname = *heiliao*, *hlwxx*, *hlcx*, *97baoliao*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, *.googletagmanager.com, *.google-analytics.com, admin.tanweixianzhi.com, *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com,*heiliao*, *hlwxx*, *hlcx*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
+hostname = *heiliao*, *hlwxx*, *hlcx*, *97baoliao*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, *.googletagmanager.com, *.google-analytics.com, admin.tanweixianzhi.com, *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, *.txxkl7s60j.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com, txxkl7s60j.com, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
 *
 *
 */
