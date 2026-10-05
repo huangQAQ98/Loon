@@ -8,11 +8,11 @@
 #!icon = https://txscript.pages.dev/tx/icon.png
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-08-25
+#!date = 2026-10-05
 
 
 [Script]
-http-request ^https?:\/\/((?:[a-z]+\.)?txh\d+\.com)\/(h5\/(?:user\/info|system\/info|movie\/(?:detail|block|search))) script-path=https://txscript.pages.dev/tx/loon.js, tag=糖心解锁, requires-body=true
+http-request ^https?:\/\/((?:[a-z]+\.)?tx\w+\.com)\/(txapi\/(?:user\/info|system\/info|movie\/(?:detail|navBlock|navFilter|blockDetail|similarSearch))) script-path=https://txscript.pages.dev/tx/loon.js, tag=糖心解锁, requires-body=true, binary-body-mode=true
 
 [Mitm]
-hostname = *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com
+hostname = *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, *.txxkl7s60j.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com, txxkl7s60j.com
