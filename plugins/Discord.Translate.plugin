@@ -1,6 +1,7 @@
 #!name = Discord Translate
 #!desc = Discord 实时翻译 V1.20
 #!author = DiscordLoon
+#!openUrl = https://apps.apple.com/app/id985746746
 #!homepage = https://github.com/Duncan588/LoonFakeNitro
 #!icon = https://raw.githubusercontent.com/Duncan588/LoonFakeNitro/main/assets/discord-translate.jpg
 #!system = iOS,iPadOS
@@ -8,6 +9,7 @@
 #!tag = Discord,翻译,多语言
 #!system_version = 15
 #!type = normal
+#!update = 2026-10-01
 
 [Argument]
 enabled = switch,true,tag=启用插件,desc=总开关。关闭后脚本不执行
