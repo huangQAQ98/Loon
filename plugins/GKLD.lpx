@@ -1,0 +1,25 @@
+[Plugin]
+#!name = 公考雷达
+#!desc = 净化开屏和我的页面，星钻会员破解
+#!openUrl = https://apps.apple.com/app/id1337474440
+#!author =西八[https://github.com/huangQAQ98/Loon]
+#!tag = 去广告
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = 
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-03
+
+[Rewrite]
+https:\/\/errlog\.umeng\.com\/api\/crashsdk\/logcollect - reject
+https:\/\/api\.gongkaoleida\.com\/api\/v.+\/my\/index - reject
+https:\/\/api\.gongkaoleida\.com\/api\/v.+\/sets\/getAllTips - reject
+https:\/\/api\.gongkaoleida\.com\/api\/v.+\/ad\/info - reject
+https:\/\/report\.gongkaoleida\.com - reject
+
+[Script]
+http-response https:\/\/api\.gongkaoleida\.com\/api script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/gkld.js, requires-body=true, timeout=60, tag=gkld
+
+[MITM]
+hostname = errlog.umeng.com, api.gongkaoleida.com, report.gongkaoleida.com
+
