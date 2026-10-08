@@ -1,0 +1,20 @@
+[Plugin]
+#!name = 白云天气
+#!desc = 解锁订阅
+#!openUrl = https://apps.apple.com/app/id1575901953
+#!author =西八[https://github.com/huangQAQ98/Loon]
+#!tag = 解锁vip
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = 
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-03
+
+[Script]
+http-response https:\/\/api\.revenuecat\.com\/v1\/(subscribers|receipts) script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/by.js, requires-body=true, timeout=60, tag=by
+
+http-response https:\/\/api\.revenuecat\.com\/v1\/(subscribers|receipts) script-path=https://raw.githubusercontent.com/xiaomaoJT/QxScript/main/rewrite/boxJS/source/by.js, timeout=60, tag=by
+
+[MITM]
+hostname = api.revenuecat.com
+
