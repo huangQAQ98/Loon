@@ -1,6 +1,6 @@
 [Plugin]
 #!name = 白云天气
-#!desc = 解锁订阅，版本≤1.50,解锁后可正常更新版本
+#!desc = 解锁订阅，App版本低于1.50，解锁后可正常更新版本
 #!openUrl = https://apps.apple.com/app/id1575901953
 #!author =西八[https://github.com/huangQAQ98/Loon]
 #!tag = 解锁vip
