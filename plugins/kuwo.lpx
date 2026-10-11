@@ -1,0 +1,27 @@
+#!name = 酷我音乐
+#!desc = 〔 酷我音乐 〕全功能破解
+#!author = 影子[https://www.napi.ltd],添加定时任务账户[https://vip1.kuwo.cn/vip/added/webView/kwOutLogin/index.html?callbackUrl=https://kuwo.cn/newh5app]
+#!homepage = https://napi.ltd
+#!openUrl = https://napi.ltd
+#!tag = 酷我音乐
+#!loon_version = 3.2.3(762)
+#!icon = https://yingzi-1251393964.cos.ap-shanghai.myqcloud.com/Static%2FImage%2FKuWoIcon.png
+#!date = 2026-05-15
+
+[Argument]
+QS = select,"Hi-Res音质","无损音质","超品音质","高品音质",tag=默认音质选择
+authUI = switch,false,tag=启用旧版界面
+cronTask = switch,true,tag=启用金币任务
+autoSvip = switch,false,tag=自动兑换周卡
+
+[Rewrite]
+^.*?(ad(.*)?\.tencentmusic\.com|kuwo\.cn\/((EcomResource|(Mobile)?Ad)Serv(er|ice)|(vip|(open)?api)?\/(setting\/sidebar\/menus|v\d\/((operate|user)\/((dolby\/|adVip\/)?text|pop\/info)|online\/homepage\/homepageBanner|user\/freeMode\/text|album\/adBar|app\/(newMenuList\/menuListInfo|pasterAdvert\/config)))|kuwopay\/vip-tab\/page\/floatbox|commercia\/eproxy\/boot\/recommend\/fee\/config)) reject-200
+^https://h5app.kuwo.cn/apps/earning-sign/index.html\?(?!FULLHASARROW).* header https://vip1.kuwo.cn/vip_html/digitalArea/70/94/57094.html?dark=1
+
+[Script]
+http-response ^(?!.*img).*?(abt-kuwo\.tencentmusic\.com|kuwo\.cn)(/vip|/(open)?api)?(/enc.*?signver|/(v\d/)?(pay/app/getConfigInfo|user/(freeMode/give/time|vip)|app/startup/config|theme\?op=gd|api/((pay/)?(user/info|payInfo/kwplayer/payMiniBar))|tingshu/index/radio|operate/homePage|sysinfo\?op\=getRePayAndDoPayBox(New)?&useNewHeadShow|recommend/(daily/main|songlist/getRecSonglist)|online/bottomTab/abConfig)|/ecom/kaiping|/kuwo/ui/info$|/kuwopay\/personal\/cells|/pay/viptab/index\.html|/kuwopay/vip-tab/(setting|page/cells)|/audi\.tion|/a\.p($|\?simpleToken\=\d|\?newver\=\d$|.*?op\=(getvip|policy_shortvideo)|.*?ptype\=vip)|/commercia/(userAssets|vip(Tab/myTab/base|/player/getStyleListByModel|/hanger/wear))|/mobi\.s\?f\=kwxs|/music\.pay\?(newver\=\d|.*?ptype\=vip)|/basedata\.s|/mgxh\.s\?user|/newh5app) script-path=https://napi.ltd/script/Worker/KuWo.js, requires-body=true, timeout=60, tag=酷我音乐, img-url=https://yingzi-1251393964.cos.ap-shanghai.myqcloud.com/Static%2FImage%2FKuWoIcon.png, argument=[{QS},{authUI},{cronTask},{autoSvip}]
+cron "0-59/12 * * * *" script-path=https://napi.ltd/script/Worker/KuWo.js, timeout=60, tag=酷我音乐, img-url=https://yingzi-1251393964.cos.ap-shanghai.myqcloud.com/Static%2FImage%2FKuWoIcon.png, enable={cronTask}, argument=[{cronTask},{autoSvip}]
+
+
+[Mitm]
+hostname = *.kuwo.cn, abt-kuwo.tencentmusic.com
