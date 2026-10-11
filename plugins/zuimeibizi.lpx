@@ -11,8 +11,6 @@
 #!date = 2026-10-11
 
 [Rewrite]
-#拦截热搜接口
-^https:\/\/api\.fzxhmy\.com\/seek\/trendingword\? reject-dict
 #拦截热门铃声接口
 ^https:\/\/api\.fzxhmy\.com\/tone\/trending\? reject-dict
 
