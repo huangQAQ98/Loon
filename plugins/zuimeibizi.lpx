@@ -17,8 +17,7 @@
 [Script]
 #解锁最美壁纸会员
 http-response ^https:\/\/api\.fzxhmy\.com\/(?:unique\/(?:backgrounds|landinginitialize|division\/material)|image\/fetch|avatar\/landing|background\/overview|member\/details|creator\/newcomers|np\/overview) script-path=https://raw.githubusercontent.com/ios151/Rewrite/main/zuimeibizhi.js, requires-body=true, timeout=60, tag=解锁最美壁纸会员
-#移除首页广告配置
-http-response ^https:\/\/api\.fzxhmy\.com\/core\/initialize\? script-path=https://kelee.one/Resource/JavaScript/iWallBiZhi/core_initialize.js, requires-body=true, tag=移除首页广告配置
+
 
 [MITM]
 hostname = api.fzxhmy.com
