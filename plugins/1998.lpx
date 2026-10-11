@@ -11,7 +11,7 @@
 [MitM]
 hostname = *.1998xuexi.com
 [Script]
-http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getVipInfomationAll\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
-http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getMemberVipInfo\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
-http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/course\/getCurrCatalogue\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
-http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/material\/getMaterialCateLog\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getVipInfomationAll\.action raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getMemberVipInfo\.action raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/course\/getCurrCatalogue\.action raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/material\/getMaterialCateLog\.action raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
