@@ -1,0 +1,15 @@
+#!name = Documents
+#!desc = 解锁会员
+#!openUrl = https://apps.apple.com/app/id364901807
+#!author =西八[https://github.com/huangQAQ98/Loon],baby[https://github.com/ios151/Rewrite/tree/main]
+#!tag = 解锁vip
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = 
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-11
+[Script]
+http-request https://license.pdfexpert.com/api/2.0/documents/subscription/refresh script-path=https://raw.githubusercontent.com/ios151/Rewrite/main/Documents.js, requires-body=true, timeout=60, tag=Documents
+
+[MITM]
+hostname = *.pdfexpert.com
