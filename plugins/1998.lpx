@@ -1,0 +1,17 @@
+#!name = 1998课堂
+#!desc = 1998 解锁全课程全资料
+#!openUrl = https://github.com/huangQAQ98/Loon
+#!author =ddgksf2013
+#!tag = 去广告
+#!homepage =https://ddgksf2013.top
+#!icon =
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-9-30
+[MitM]
+hostname = *.1998xuexi.com
+[Script]
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getVipInfomationAll\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/vip\/getMemberVipInfo\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/course\/getCurrCatalogue\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js.js,requires-body=true,timeout=10
+http-response ^https:\/\/.*\.1998xuexi\.com\/source-gateway\/store-web-new\/app\/material\/getMaterialCateLog\.action https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/Rewrite%20/1998.js,requires-body=true,timeout=10
