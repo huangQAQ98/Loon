@@ -1,13 +1,13 @@
 #!name = 1998课堂
 #!desc = 1998 解锁全课程全资料
-#!openUrl = https://github.com/huangQAQ98/Loon
-#!author =ddgksf2013
-#!tag = 去广告
-#!homepage =https://ddgksf2013.top
-#!icon =
+#!openUrl=https://apps.apple.com/app/id1513892479
+#!author =西八[https://github.com/huangQAQ98/Loon],baby[https://github.com/ios151/Rewrite/tree/main]
+#!tag = 解锁vip
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = 
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-9-30
+#!date = 2026-10-11
 [MitM]
 hostname = *.1998xuexi.com
 [Script]
