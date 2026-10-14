@@ -24,4 +24,4 @@ http-response ^https?:\/\/bootpreload\.uve\.weibo\.com(?:\/v2\/ad\/preload)(?=[?
 http-response ^https?:\/\/wbapp\.uve\.weibo\.com(?:\/wbapplua\/wbpullad\.lua)(?=[?#]|$)$ script-path=https://ddgksf2013.top/scripts/weibo_json.js, requires-body=true, tag=微博_广告拉取接口
 
 [MITM]
-hostname = api.weibo.cn, bootpreload.uve.weibo.com, wbapp.uve.weibo.com
+hostname = api.weibo.cn, bootpreload.uve.weibo.com, wbapp.uve.weibo.com, *.weibo.cn, *.weibo.com, weibo.com
