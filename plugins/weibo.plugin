@@ -7,10 +7,7 @@
 #!openUrl=https://apps.apple.com/app/id350962115
 #!system=iOS,iPadOS
 
-[MITM]
-hostname = api.weibo.cn, bootpreload.uve.weibo.com, wbapp.uve.weibo.com
-
-[Rewrite]
+[Script]
 # 读取配置 
 http-response ^https?:\/\/api\.weibo\.cn\/__qx_weibo_settings__\/(?:api\/config)?(?=[?#]|$)$ script-path=https://ddgksf2013.top/scripts/weibo_json.js, requires-body=true, tag=微博_读取配置
 
@@ -25,3 +22,6 @@ http-response ^https?:\/\/bootpreload\.uve\.weibo\.com(?:\/v2\/ad\/preload)(?=[?
 
 # wbpullad广告接口
 http-response ^https?:\/\/wbapp\.uve\.weibo\.com(?:\/wbapplua\/wbpullad\.lua)(?=[?#]|$)$ script-path=https://ddgksf2013.top/scripts/weibo_json.js, requires-body=true, tag=微博_广告拉取接口
+
+[MITM]
+hostname = api.weibo.cn, bootpreload.uve.weibo.com, wbapp.uve.weibo.com
