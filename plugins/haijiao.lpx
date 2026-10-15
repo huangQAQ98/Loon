@@ -1,0 +1,16 @@
+#!name=海角视频
+#!desc=海角视频去除广告，解锁VIP
+#!icon=https://raw.githubusercontent.com/ios151/-/main/haijiao.png
+#!author=ios151 Rewrite
+#!openUrl = https://www.haijiao.com
+#!homepage=https://github.com/ios151/Rewrite
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-05 08:00:00
+
+[Script]
+http-response ^https?:\/\/(www\.)?haijiao\.com\/api\/(banner\/banner_list|attachment|topic\/\d+) script-path=https://raw.githubusercontent.com/ios151/Rewrite/refs/heads/main/haijiao/dist/haijiao.js, requires-body=true, timeout=20, tag=海角API
+http-response ^https?:\/\/ts\d+\.hj\d+\.top\/.*\.m3u8$ script-path=https://raw.githubusercontent.com/ios151/Rewrite/refs/heads/main/haijiao/dist/haijiao.js, requires-body=true, timeout=20, tag=海角m3u8
+
+[MITM]
+hostname = haijiao.com, www.haijiao.com, *.hj260302818.top
