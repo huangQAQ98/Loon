@@ -13,13 +13,11 @@ haijiao_button = switch,false,true,tag=海角视频,desc=关闭开关将不对�
 huanyu_button = switch,false,true,tag=幻宇星球,desc=关闭开关将不对幻宇星球生效
 One_button = switch,false,true,tag=ONE.一个,desc=关闭开关将不对ONE.一个生效
 tangxin_button = switch,false,true,tag=糖心Vlog,desc=关闭开关将不对糖心Vlog生效
-Player = select,"Safari","Filebar","Forward","SenPlayer","yyb","yybx","Alook","Stay",tag=播放器,desc=选择你要使用的播放器
 hlw = switch,false,true,tag=黑料网,desc=关闭开关将不对黑料网生效
+tanweixianzhi_button = switch,false,true,tag=探味闲置,desc=关闭开关将不对探味闲置生效
 baoyu = switch, false, tag = 鲍鱼盒子, desc = 关闭开关将不对鲍鱼盒子生效
 Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 鲍鱼盒子token(必填)
-VIP = switch, false, tag = [启用]会员, desc = 关闭开关将不对探味闲置生效
-Video = switch, false, tag = [视频-付费], desc = 关闭开关将不对探味闲置生效
-
+Player = select,"Safari","Filebar","Forward","SenPlayer","yyb","yybx","Alook","Stay",tag=播放器,desc=选择你要使用的播放器
 
 [Rule]
 DOMAIN,unicef-porn.vercel.app,PROXY
@@ -46,8 +44,8 @@ http-response ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|fav
 http-request ^https?:\/\/.+\/api\/(video\/report_item?|live\/room\/detail?|video\/related?|video\/detail|socialposts_info|my\/profile) script-path=https://he2o.vercel.app/Resource/Plugin/by.js, requires-body=true, timeout=60, tag= 鲍鱼盒子, argument=[{Authorization}],enable={baoyu}
 
 # ========== 探味闲置========== https://apps.apple.com/app/id6746157667
-http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/centre\/userInfo script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=会员, enable={VIP}
-http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=付费, enable={Video}
+http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/centre\/userInfo script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=探味闲置会员, enable={tanweixianzhi}
+http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=探味闲置付费, enable={tanweixianzhi}
 
 # ========== 幻宇星球========== 
 http-request ^https?://(?:huanyuxingqiu\.\w+|daoyu\.\w+|\w*hyxq\w*\.\w+)/(?!.*\.(?:png|jpe?g|gif|webp|svg|ico|css|js|woff2?|ttf|eot|mp[34]|zip|rar)(?:\?|$)).* script-path=https://raw.githubusercontent.com/ios151/Rewrite/main/huanyu/dist/loon.js, requires-body=true, binary-body-mode=true, tag=幻宇星球, enable={huanyu}
