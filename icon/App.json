@@ -9,6 +9,10 @@
         {
             "name": "LocalDevVPN",
             "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/dev-loopback.png"
+        },
+        {
+            "name": "dandanbuyu",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/dandanbuyu.png"
         }
     ]
 }
