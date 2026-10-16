@@ -33,14 +33,6 @@
 ^https?:\/\/speechenglish\.cn\/apple\/(order|usercoupon) - reject
 
 [Script]
-#Revenuecat-系列 hostname = api.revenuecat.com, api.rc-backup.com
-http-response ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, requires-body=true, timeout=60, tag=Reheji
-
-http-request ^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/?(.*?)*$) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/Reheji.js, timeout=60, tag=Reheji
-
-#iTunes-系列 hostname = buy.itunes.apple.com
-http-response ^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt$ script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/iTunes.js, requires-body=true, timeout=60, tag=iTunes
-
 #Bending-系列 hostname = *.oracle.bendingspoonsapps.com
 http-response ^https?:\/\/.*\.oracle\.bendingspoonsapps\.com\/v\d\/(users\/.+|purchases\/verify) script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/bending.js, requires-body=true, timeout=60, tag=bending
 
