@@ -1,0 +1,14 @@
+{
+    "name": "西八图标库",
+    "description": "自制图标包，图片托管在Github",
+    "icons": [
+        {
+            "name": "LocalDevVPN",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/LocalDevVPN-iOS-512x512.png"
+        },
+        {
+            "name": "LocalDevVPN",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/dev-loopback.png"
+        }
+    ]
+}
