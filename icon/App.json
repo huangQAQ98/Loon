@@ -1,6 +1,6 @@
 {
     "name": "西八图标库",
-    "description": "自制图标包丨更新时间：2026.10.16",
+    "description": "自制图标包丨更新时间：2026.10.22",
     "icons": [
         {
             "name": "LocalDevVPN",
@@ -16,7 +16,11 @@
         },
         {
             "name": "中国农业银行",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/nonghang.png"
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/nonghang.png"        
+        },
+        {
+            "name": "酷安",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/KuAn.png"  
         }
     ]
 }
