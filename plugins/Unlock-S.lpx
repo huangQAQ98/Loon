@@ -1,5 +1,5 @@
 #!name= 联合国儿童基金会 𝕏
-#!desc= 糖心Vlog、黑料网、鲍鱼盒子、探味闲置等应用的相关学习探索;
+#!desc= 糖心Vlog、黑料网、鲍鱼盒子、幻宇星球等应用的相关学习探索
 #!author= 联合国儿童基金会[https://t.me/Jsforbaby],ZenmoFeiShi[https://raw.githubusercontent.com/ZenmoFeiShi/Qx],聚合[https://unicef-porn.vercel.app],黑料网[https://155.fun/],糖心Vlog[https://txh087.com]
 #!openUrl = https://unicef-porn.vercel.app 
 #!homepage= https://github.com/huangQAQ98/Loon
@@ -14,7 +14,6 @@ huanyu_button = switch,false,true,tag=幻宇星球,desc=关闭开关将不对幻
 One_button = switch,false,true,tag=ONE.一个,desc=关闭开关将不对ONE.一个生效
 tangxin_button = switch,false,true,tag=糖心Vlog,desc=关闭开关将不对糖心Vlog生效
 hlw = switch,false,true,tag=黑料网,desc=关闭开关将不对黑料网生效
-tanweixianzhi_button = switch,false,true,tag=探味闲置,desc=关闭开关将不对探味闲置生效
 baoyu = switch, false, tag = 鲍鱼盒子, desc = 关闭开关将不对鲍鱼盒子生效
 Authorization = input, "eb8fbd7caca26d2b8147e59340b78d60", tag = Authorization, desc = 鲍鱼盒子token(必填)
 Player = select,"Safari","Filebar","Forward","SenPlayer","yyb","yybx","Alook","Stay",tag=播放器,desc=选择你要使用的播放器
@@ -43,10 +42,6 @@ http-response ^https?:\/\/(?:www\.)?97baoliao\.com\/(?!usr\/|storage\/|api\/|fav
 # ========== 鲍鱼盒子========== https://Juhe.Live
 http-request ^https?:\/\/.+\/api\/(video\/report_item?|live\/room\/detail?|video\/related?|video\/detail|socialposts_info|my\/profile) script-path=https://he2o.vercel.app/Resource/Plugin/by.js, requires-body=true, timeout=60, tag= 鲍鱼盒子, argument=[{Authorization}],enable={baoyu}
 
-# ========== 探味闲置========== https://apps.apple.com/app/id6746157667
-http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/centre\/userInfo script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=探味闲置会员, enable={tanweixianzhi}
-http-response ^https:\/\/admin\.tanweixianzhi\.com\/prod\/api\/video\/info script-path=https://he2o.vercel.app/Resource/Plugin/Tweixz.js, requires-body=true, timeout=60, tag=探味闲置付费, enable={tanweixianzhi}
-
 # ========== 幻宇星球========== 
 http-request ^https?://(?:huanyuxingqiu\.\w+|daoyu\.\w+|\w*hyxq\w*\.\w+)/(?!.*\.(?:png|jpe?g|gif|webp|svg|ico|css|js|woff2?|ttf|eot|mp[34]|zip|rar)(?:\?|$)).* script-path=https://raw.githubusercontent.com/ios151/Rewrite/main/huanyu/dist/loon.js, requires-body=true, binary-body-mode=true, tag=幻宇星球, enable={huanyu}
 
@@ -70,7 +65,7 @@ http-response ^https?:\/\/ts\d+\.hj\d+\.top\/.*\.m3u8$ script-path=https://raw.g
 ^https?:\/\/(?:www\.)?google-analytics\.com\/ - reject
 
 [Mitm]
-hostname = haijiao.com, www.haijiao.com, *.hj260302818.top, huanyuxingqiu.*, daoyu.*, hyxq03.com, *.2b37894.com, *.35a46dd.com, *.43b8477.com, *.5ce3771.com, *.632d809.com, *.apubis.com, *.einhn4.com, *.53cuk7g.com, *.em1oifd0.com, *.pjq6he.com, *.zbdk8ws.com, *.f38khx.com, *.deyhhc3.com, *.68f4deb.com, *.3459381.com, *.61c76a0.com, *.87735d5.com, *.afe9a49.com, *.c6dd5cc.com, *.b675211.com, *.a9a2bc4.com, *.8eb269a.com, *.4c86d03.com, *.979bb9e.com, *.988068b.com, *.9cbd862.com, *.c2e777b.com, *.b676039.com, *.ab1e7ee.com, *.5ed249d.com, *.2b1daea.com, *.4934430.com, *.645fb8d.com, *.5ebd5d.com, *.k55n2r.com, *.26bb4xt.com, *.vf5x3hv.com, *.fexsqz.com, *.ec53y2t.com, *.j7y675.com, *.nj5byj6j.com, *.ecmxb7e.com, *heiliao*, *hlwxx*, *hlcx*, *97baoliao*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, *.googletagmanager.com, *.google-analytics.com, admin.tanweixianzhi.com, *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, *.txxkl7s60j.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com, txxkl7s60j.com, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
+hostname = haijiao.com, www.haijiao.com, *.hj260302818.top, huanyuxingqiu.*, daoyu.*, hyxq03.com, *.2b37894.com, *.35a46dd.com, *.43b8477.com, *.5ce3771.com, *.632d809.com, *.apubis.com, *.einhn4.com, *.53cuk7g.com, *.em1oifd0.com, *.pjq6he.com, *.zbdk8ws.com, *.f38khx.com, *.deyhhc3.com, *.68f4deb.com, *.3459381.com, *.61c76a0.com, *.87735d5.com, *.afe9a49.com, *.c6dd5cc.com, *.b675211.com, *.a9a2bc4.com, *.8eb269a.com, *.4c86d03.com, *.979bb9e.com, *.988068b.com, *.9cbd862.com, *.c2e777b.com, *.b676039.com, *.ab1e7ee.com, *.5ed249d.com, *.2b1daea.com, *.4934430.com, *.645fb8d.com, *.5ebd5d.com, *.k55n2r.com, *.26bb4xt.com, *.vf5x3hv.com, *.fexsqz.com, *.ec53y2t.com, *.j7y675.com, *.nj5byj6j.com, *.ecmxb7e.com, *heiliao*, *hlwxx*, *hlcx*, *97baoliao*, stats.kwvprfcr.xyz, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com, *.googletagmanager.com, *.google-analytics.com,  *.txh066.com, *.txh067.com, *.txh068.com, *.txh069.com, *.txh087.com, *.txxkl7s60j.com, txh066.com, txh067.com, txh068.com, txh069.com, txh087.com, txxkl7s60j.com, mc.yandex.ru, api1.cghhqca.cc, api.shuifeng.cc, ads.zyudkkup.com, static.cloudflareinsights.com,w1c2.ooat88.com,tu.dfgfdg.win,103.44.236.*,*.artrg.cn,vkfqb.ojyrz.com,byapi.*.com,211.99.98.*,103.39.222.*,yubaoyu.oss-cn-shenzhen.aliyuncs.com,*api.h8h4h.com,42.157.129.25,siajksslwiso.anningsh.com,211.99.98.63,111.180.204.11,88.gbvdfe.com,vkfqb.ojyrz.com,211.99.98.*,vdop.fqoas.com,ica.ooat88.com,103.44.236.131:8001
 *
 *
 */
@@ -103,28 +98,6 @@ header["authorization"] = "Bearer " + authorization;
 console.log("✅ 🧧已解锁 🎉");
 
 $done({ headers: header });
-
-*
-*
-*/
-
-
-
-
-
-
-let obj = JSON.parse($response.body);
-
-obj.data.nickname = "∞_3452";
-obj.data.is_vip = 1;
-obj.data.vip_level = 1;
-obj.data.vip_validity = "2100-05-01 23:59:59";
-
-obj.data.is_free = 1;
-obj.data.is_buy = 1;
-
-$done({body: JSON.stringify(obj)});
-
 
 
 
