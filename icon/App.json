@@ -20,7 +20,11 @@
         },
         {
             "name": "酷安",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/KuAn.png"  
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/KuAn.png"        
+        },
+        {
+            "name": "白云",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/baiyun.png"    
         }
     ]
 }
