@@ -25,6 +25,10 @@
         {
             "name": "白云",
             "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/baiyun.png"    
+        },
+        {
+            "name": "one",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/one.png"    
         }
     ]
 }
