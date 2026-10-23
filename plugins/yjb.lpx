@@ -1,5 +1,5 @@
-#!name = 养基宝
-#!desc = 养基宝广告净化，解锁VIP
+#!name = 养鸡宝净化
+#!desc = 养鸡宝去广告、VIP解锁
 #!author = Custom
 #!loon_version = 3.5.2(996)
 #!date = 2026-10-23
@@ -8,6 +8,5 @@
 hostname = *.yangjibao.com
 
 [rewrite_local]
-^https?:\/\/.*yangjibao.com\/unify_ad url script-response-body
-; VIP解锁接口
-^https?:\/\/.*yangjibao\.com\/(.*\/account|vip_info) url script-response-body
+^https?:\/\/.*yangjibao.com\/unify_ad url script-response-body https://xxx/unify_ad.js, requires-body=true, tag=养鸡宝-清除广告
+^https?:\/\/.*yangjibao\.com\/(.*\/account|vip_info) url script-response-body https://xxx/vip.js, requires-body=true, tag=养鸡宝-VIP解锁
