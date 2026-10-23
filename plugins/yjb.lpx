@@ -8,7 +8,6 @@
 hostname = *.yangjibao.com
 
 [rewrite_local]
-#清除广告数据
-^https?:\/\/.*yangjibao.com\/unify_ad url jsonjq-response-body '.data=null'
-#VIP解锁
-^https?:\/\/.*yangjibao\.com\/.*\/account|vip_info url jsonjq-response-body '.data.vip_label=true | .data.vip_expiry_date="2099-12-31" | .data.is_pay=true'
+^https?:\/\/.*yangjibao.com\/unify_ad url script-response-body
+; VIP解锁接口
+^https?:\/\/.*yangjibao\.com\/(.*\/account|vip_info) url script-response-body
