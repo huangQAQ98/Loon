@@ -1,0 +1,14 @@
+#!name = 养基宝
+#!desc = 养基宝广告净化，解锁VIP
+#!author = Custom
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-23
+
+[mitm]
+hostname = *.yangjibao.com
+
+[rewrite_local]
+#清除广告数据
+^https?:\/\/.*yangjibao.com\/unify_ad url jsonjq-response-body '.data=null'
+#VIP解锁
+^https?:\/\/.*yangjibao\.com\/.*\/account|vip_info url jsonjq-response-body '.data.vip_label=true | .data.vip_expiry_date="2099-12-31" | .data.is_pay=true'
