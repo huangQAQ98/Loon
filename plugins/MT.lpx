@@ -1,19 +1,28 @@
-#!name = 美团App 12.67.403
-#!author = TG@ZenMoFiShi
-#!update = 2026.10.25
+[Plugin]
+#!name = 美团去广告
+#!desc = 净化美团广告，去除底部小团助手，版本12.67.403
+#!openUrl = https://apps.apple.com/app/id423084029
+#!author =西八[https://github.com/huangQAQ98/Loon],怎么肥事[https://github.com/ZenmoFeiShi/Qx]
+#!tag = 去广告
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/meituan.png
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-25
 
 [Rule]
-HOST,shark-mt.meituan.com,REJECT
-HOST,shark-default.meituan.com,REJECT
-HOST,shark-dp.meituan.com,REJECT
-HOST,shark-ps.meituan.com,REJECT
-HOST,shark-wm.sankuai.com,REJECT
-HOST,shark.dianping.com,REJECT
-HOST-SUFFIX,mquic-*.meituan.com,REJECT
-HOST,httpdnsmultiapi.meituan.com,REJECT
-HOST,httpdnsmultiapivip.meituan.com,REJECT
-HOST,dnspod.meituan.httpdns.qcloud.com,REJECT
-HOST,dnspod.meituan.httpdns.start.qcloud.com,REJECT
+DOMAIN,shark-mt.meituan.com,REJECT
+DOMAIN,shark-default.meituan.com,REJECT
+DOMAIN,shark-dp.meituan.com,REJECT
+DOMAIN,shark-ps.meituan.com,REJECT
+DOMAIN,shark-wm.sankuai.com,REJECT
+DOMAIN,shark.dianping.com,REJECT
+DOMAIN,httpdnsmultiapi.meituan.com,REJECT
+DOMAIN,httpdnsmultiapivip.meituan.com,REJECT
+DOMAIN,httpdns.meituan.com,REJECT
+DOMAIN,httpdnsvip.meituan.com,REJECT
+DOMAIN,dnspod.meituan.httpdns.qcloud.com,REJECT
+DOMAIN,dnspod.meituan.httpdns.start.qcloud.com,REJECT
 IP-CIDR,202.90.108.13/32,REJECT
 IP-CIDR,202.90.110.46/32,REJECT
 IP-CIDR,202.90.108.69/32,REJECT
@@ -34,20 +43,40 @@ IP-CIDR,101.50.8.64/32,REJECT
 IP-CIDR,103.63.160.64/32,REJECT
 IP-CIDR,103.63.160.69/32,REJECT
 IP-CIDR,103.37.155.77/32,REJECT
+IP-CIDR,103.37.155.60/32,REJECT
+IP-CIDR,111.230.0.200/32,REJECT
+IP-CIDR,139.9.47.231/32,REJECT
+IP-CIDR,121.37.4.167/32,REJECT
+IP-CIDR,119.29.126.219/32,REJECT
+IP-CIDR,106.55.217.56/32,REJECT
+IP-CIDR,103.37.152.224/32,REJECT
 IP-CIDR,119.29.48.215/32,REJECT
 IP-CIDR,42.193.128.160/32,REJECT
-IP6-CIDR,2405:1480:3000:303b::303b/128,REJECT
-IP6-CIDR,2405:1480:1000:3::1e/128,REJECT
+IP-CIDR6,2405:1480:3000:303b::303b/128,REJECT
+IP-CIDR6,2405:1480:1000:3::1e/128,REJECT
+IP-CIDR6,2405:1480:1000:4::15/128,REJECT
+IP-CIDR6,2402:4e00:40:40::2:373/128,REJECT
 
 [Rewrite]
-^https?://apimobile.meituan.com/aggroup/indexTab url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化1
-^https?://feedguess.meituan.com/lycoris/scene/(gwc_feed1_2265|personalcenter_2154)(?|$) url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化2
-^https?://mt-personalcenter.meituan.com/usercenter/display url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化3
-^https?://apimobile.meituan.com/group/v1/deal/searchpage/defaultword url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化4
-^https?://apimobile.meituan.com/group/v1/deal/searchpage/hotword/city/divide/hotrecommend/ url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化5
-^https?://assistify.meituan.com/assistant/getAppClientHornConfig url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化6
-^https?://mop.meituan.com/mop/entry/shoppingCartEntry url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化7
-^https?://mop.meituan.com/api/entryModule/startupPicture url script-response-body https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, tag=美团净化8
+^https?:\/\/(httpdns|httpdnsvip|httpdnsmultiapi|httpdnsmultiapivip)\.meituan\.com\/ - reject
+^http:\/\/103\.37\.155\.60\/fetch - reject
+
+[Script]
+http-response ^https?:\/\/apimobile\.meituan\.com\/aggroup\/indexTab script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/feedguess\.meituan\.com\/lycoris\/scene\/(gwc_feed1_2265|personalcenter_2154)(\?|$) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/mt-personalcenter\.meituan\.com\/usercenter\/display script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/ script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/assistify\.meituan\.com\/assistant\/getAppClientHornConfig script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
+
+http-response ^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
 
 [MITM]
-hostname = apimobile.meituan.com, feedguess.meituan.com, mop.meituan.com, mt-personalcenter.meituan.com, assistify.meituan.com
+hostname = apimobile.meituan.com, feedguess.meituan.com, mop.meituan.com, mt-personalcenter.meituan.com, assistify.meituan.com, httpdns.meituan.com, httpdnsmultiapi.meituan.com
