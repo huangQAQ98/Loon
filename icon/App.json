@@ -29,6 +29,10 @@
         {
             "name": "one",
             "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/one.png"    
+        },
+        {
+            "name": "美团",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/meituan.png" 
         }
     ]
 }
