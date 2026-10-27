@@ -1,6 +1,6 @@
 [Plugin]
 #!name = 美团去广告
-#!desc = 净化美团广告，去除底部小团助手，版本12.67.403
+#!desc = 去除美团 App 开屏，移除搜索热词、发现热词、美团热搜、底部视频、小团AI tab 按钮、移除购物车顶部横幅和底部推流，移除我的页面底部推荐，版本12.67.403
 #!openUrl = https://apps.apple.com/app/id423084029
 #!author =西八[https://github.com/huangQAQ98/Loon],怎么肥事[https://github.com/ZenmoFeiShi/Qx]
 #!tag = 去广告
@@ -8,7 +8,7 @@
 #!icon = https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/meituan.png
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-10-25
+#!date = 2026-10-27 21:14:00
 
 [Rule]
 DOMAIN,shark-mt.meituan.com,REJECT
@@ -62,21 +62,21 @@ IP-CIDR6,2402:4e00:40:40::2:373/128,REJECT
 ^http:\/\/103\.37\.155\.60\/fetch - reject
 
 [Script]
-http-response ^https?:\/\/apimobile\.meituan\.com\/aggroup\/indexTab script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/feedguess\.meituan\.com\/lycoris\/scene\/(gwc_feed1_2265|personalcenter_2154)(\?|$) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/mt-personalcenter\.meituan\.com\/usercenter\/display script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/ script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/assistify\.meituan\.com\/assistant\/getAppClientHornConfig script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
-http-response ^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js, requires-body=true, timeout=60, tag=MT
-
+# 首页标签：去掉 video、xiaotuan
+http-response ^https?:\/\/apimobile\.meituan\.com\/aggroup\/indexTab script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团首页标签
+# 信息流：清空 gwc_feed1_2265、personalcenter_2154 两个场景
+http-response ^https?:\/\/feedguess\.meituan\.com\/lycoris\/scene\/(gwc_feed1_2265|personalcenter_2154)(\?|$) script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团信息流
+# 我的页：去掉 mine_cross_recommend
+http-response ^https?:\/\/mt-personalcenter\.meituan\.com\/usercenter\/display script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团我的页面
+# 搜索默认词与热词
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/defaultword script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团搜索热词
+# 热搜推荐与 AI 气泡
+http-response ^https?:\/\/apimobile\.meituan\.com\/group\/v1\/deal\/searchpage\/hotword\/city\/divide\/hotrecommend\/ script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body = true,tag=美团热搜推荐
+# AI 助手角标配置
+http-response ^https?:\/\/assistify\.meituan\.com\/assistant\/getAppClientHornConfig script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团AI角标
+# 购物车入口顶部横幅
+http-response ^https?:\/\/mop\.meituan\.com\/mop\/entry\/shoppingCartEntry script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团购物车横幅
+# 开屏图
+http-response ^https?:\/\/mop\.meituan\.com\/api\/entryModule\/startupPicture script-path=https://raw.githubusercontent.com/ZenmoFeiShi/Qx/refs/heads/main/MT.js,requires-body=true,tag=美团开屏广告
 [MITM]
 hostname = apimobile.meituan.com, feedguess.meituan.com, mop.meituan.com, mt-personalcenter.meituan.com, assistify.meituan.com, httpdns.meituan.com, httpdnsmultiapi.meituan.com
