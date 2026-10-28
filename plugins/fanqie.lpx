@@ -8,7 +8,7 @@
 #!icon = https://raw.githubusercontent.com/deezertidal/private/main/icons/fanqie.png
 #!system = iOS,iPadOS,macOS
 #!loon_version = 3.5.2(996)
-#!date = 2026-9-30
+#!date = 2026-10-30
 
 
 [Rule]
@@ -31,8 +31,6 @@ DOMAIN-KEYWORD,zijieapi,REJECT
 
 DOMAIN,activity-ag.awemeughun.com,REJECT
 
-
-
 DOMAIN,mcs.snssdk.com,REJECT
 
 DOMAIN,tnc3-alisc1.snssdk.com,REJECT
@@ -44,8 +42,6 @@ DOMAIN,tnc3-aliec2.snssdk.com,REJECT
 DOMAIN,is.snssdk.com,REJECT
 
 DOMAIN,i.snssdk.com,REJECT
-
-
 
 DOMAIN,v6-novelapp.ixigua.com,REJECT
 
@@ -63,17 +59,11 @@ DOMAIN,sf3-ttcdn-tos.pstatp.com,REJECT
 
 DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
 
-
-
-
-
 DOMAIN-SUFFIX,byteorge.com,REJECT
 
 DOMAIN-SUFFIX,bytegoofy.com,REJECT
 
 DOMAIN-SUFFIX,bytedance.com,REJECT
-
-
 
 IP-CIDR,49.71.37.101/32,REJECT,no-resolve
 
@@ -87,9 +77,28 @@ IP-CIDR,101.36.166.16/32,REJECT,no-resolve
 
 IP-CIDR,180.96.2.114/32,REJECT,no-resolve
 
-
-
-[URL Rewrite]
+[Rewrite]
+# ---------- 签到 ----------
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/sign_in\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/getLoginRewardInfo - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/get_ad_info - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/excitation_ad_right\/ - reject-dict
+# ---------- 宝箱 ----------
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/treasure_task\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/user\/gold_box_page - reject-dict
+# ---------- 提现 / 金币 ----------
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/split_coin_activity_detail - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/consume\/ - reject-dict
+# ---------- 任务 / 活动 / 弹窗 ----------
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/scene - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/single - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/done\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/meal_v2\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/sleep\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/task\/alarm_clock\/ - reject-dict
+^https?:\/\/api\.fqnovel\.com\/luckycat\/novel\/v[0-9]+\/unify\/bookshelf_sign_in\/ - reject-dict
+# ---------- 听书金币挂件 ----------
+^https?:\/\/api\.fqnovel\.com\/luckycat\/[a-zA-Z0-9]+\/v[0-9]+\/resource\/pendant_plan - reject-dict
 
 # 番茄小说去章末广告
 
@@ -121,14 +130,11 @@ IP-CIDR,180.96.2.114/32,REJECT,no-resolve
 
 # .+web\.business\.image _ reject
 
-
-
 # 下面两条来自他人,暂不知是哪个app
 
 ^https?:\/\/.+?\.snssdk\.com\/motor\/operation\/activity\/display\/config\/V2\/ _ reject
 
 
-
 [MITM]
 
-hostname =*.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com
+hostname =*.pangolin-sdk-toutiao,*.pangolin-sdk-toutiao.*,*.pstatp.com,*.pstatp.com.*,*.pglstatp-toutiao.com.*,*.pglstatp-toutiao.com,gurd.snssdk.com,gurd.snssdk.com.*,*default.ixigua.com, api.fqnovel.com
