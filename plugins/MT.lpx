@@ -1,6 +1,6 @@
 [Plugin]
-#!name = 美团去广告
-#!desc = 去除美团 App 开屏，移除搜索热词、发现热词、美团热搜、底部视频、小团AI tab 按钮、移除购物车顶部横幅和底部推流，移除我的页面底部推荐，版本12.67.403
+#!name = 美团
+#!desc = 过滤美团广告，版本12.67.403
 #!openUrl = https://apps.apple.com/app/id423084029
 #!author =西八[https://github.com/huangQAQ98/Loon],怎么肥事[https://github.com/ZenmoFeiShi/Qx]
 #!tag = 去广告
