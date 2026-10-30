@@ -1,7 +1,13 @@
 #!name=虎扑去广告
-#!desc=关闭虎扑所有广告
+#!desc=虎扑去广告｜原生mock，不白屏不等待
+#!author=热心群友
+#!loon_version=3.2.0
+
 [Rule]
 DOMAIN-SUFFIX,goblin.hupu.com,DIRECT
+
 [Rewrite]
-response if ${url} ~= /^https?://goblin.hupu.com/\d+/[\d.]+/interfaceAd/getOther// then response.body.mock(”json“, {”ad_code“:-41,”show_type“:0,”ads“:[]}, 200)
-[Mitm] hostname = goblin.hupu.com
+^https?:\/\/goblin\.hupu\.com\/\d+\/[\d.]+\/interfaceAd\/getOther mock-response-body data-type=json data="{\"ad_code\":-41,\"show_type\":0,\"ads\":[]}" status-code=200, tag=虎扑广告接口mock
+
+[Mitm]
+hostname = goblin.hupu.com
