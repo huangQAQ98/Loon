@@ -1,0 +1,41 @@
+#!name = 百度贴吧
+#!desc = 过滤百度贴吧广告
+#!openUrl = https://apps.apple.com/app/id477927812
+#!author =西八[https://github.com/huangQAQ98/Loon],怎么肥事[https://github.com/ZenmoFeiShi/Qx]
+#!tag = 去广告
+#!homepage =https://github.com/huangQAQ98/Loon
+#!icon = https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/tieba.png
+#!system = iOS,iPadOS,macOS
+#!loon_version = 3.5.2(996)
+#!date = 2026-10-31 21:14:00
+
+[Rule]
+# 拦截afd广告域名
+DOMAIN,afd.baidu.com,REJECT  
+ # 拦截mobads广告域名
+DOMAIN,mobads.baidu.com,REJECT     
+
+[Rewrite]
+# 移除首页直播feed横幅广告
+^https:\/\/tiebac\.baidu\.com\/livefeed\/feed response-body-json-jq 'del(.data.banner.items)'
+# 移除贴吧侧边栏VIP横幅、工具入口
+^https:\/\/tiebac\.baidu\.com\/c\/f\/sidebar\/home response-body-json-jq 'del(.vip_banner, .tools)'
+# 个人主页净化：删掉横幅、贷款、推荐、VIP、成长、商业入口等
+^https:\/\/tiebac\.baidu\.com\/c\/u\/user\/profile response-body-json-jq 'del(.banner, .duxiaoman_entry, .recom_naws_list, .vip_banner, .namoaixud_entry, .user.user_growth, .zone_info[1].commerce, .zone_info[2].banner, .zone_info[0].common_func, .zone_info[3].game, .zone_info[4].auxiliary_func) | .custom_grid |= map(select(.type != 60 and .type != 53 and .type != 58 and .type != 50 and .type != 10 and .type != 64 and .type != 51 and .type != 52 and .type != 55 and .type != 57 and .type != 62))'
+# 帖子底部：移除活动卡片、AI聊天室引导
+^https:\/\/tieba\.baidu\.com\/c\/f\/frs\/frsBottom response-body-json-jq 'del(.card_activity.small_card, .card_activity.big_card, .ai_chatroom_guide)'
+# 拦截聊天订阅列表
+^https:\/\/tiebac\.baidu\.com\/c\/u\/chat\/getChatSubscriptionList - reject-dict
+# 拦截搜索发现推荐
+^https:\/\/tiebac\.baidu\.com\/c\/f\/search\/discover - reject-dict
+# 拦截贴吧引导推荐
+^https:\/\/tiebac\.baidu\.com\/c\/f\/forum\/forumGuide - reject-dict
+
+[Script]
+# 帖子列表、信息流JSON净化（去广告、推荐内容）
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/(c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)$|tiebaads\/commonbatch|c\/s\/sync$) script-path=https://github.com/ifflagged/Romeo/raw/main/Modules/JavaScript/ZenmoFeiShi/TB/app2smile_tieba-json.js, requires-body=true, timeout=60, tag=帖子列表、信息流净化
+# 帖子列表protobuf二进制净化（协议层广告过滤）
+http-response ^http(s:\/\/tiebac|:\/\/c\.tieba)\.baidu\.com\/c\/f\/(frs\/(page|threadlist|generalTabList)|pb\/page|excellent\/personalized)\?cmd script-path=https://github.com/ifflagged/Romeo/raw/main/Modules/JavaScript/ZenmoFeiShi/TB/app2smile_tieba-proto.js, requires-body=true, binary-body-mode=true, timeout=60, tag=帖子列表协议层广告过滤
+
+[MITM]
+hostname = tieba.baidu.com, tiebac.baidu.com
