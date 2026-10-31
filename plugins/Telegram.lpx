@@ -1,5 +1,5 @@
 #!name=Telegram
-#!desc=Telegram外部链接跳转，将tg的垃圾IP转移到好的IP上
+#!desc=Telegram外部链接跳转并将tg的垃圾IP转移到好的IP上
 #!author=恩秀[https://loonlab.103516.xyz/Plugin/],自有[https://github.com/huangQAQ98/Loon]
 #!icon=https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
 #!openUrl=https://apps.apple.com/app/id686449807
