@@ -1,0 +1,31 @@
+#!name=增强预览插件脚本
+#!desc=让浏览器直接渲染 lpx / plugin / snippet 文件，不触发下载（不限域名，自定义域名同样生效）
+#!author=mosen[https://github.com/mosenwoek],moyan[https://t.me/tgxiaoxizf_bot]
+#!homepage=https://github.com/mosenwoek/proxy_app
+#!icon=https://raw.githubusercontent.com/mosenwoek/icons/refs/heads/main/yulanview.png
+#!tag=工具
+#!system=ios
+#!loon_version=3.5.1
+#!date=2026-10-20
+
+[Rewrite]
+# .snippet → snippet.txt（窄规则在前，同阶段按顺序执行，后者覆盖前者）
+#response if ${url} ~= /\.snippet(\?.*)?$/i then response.header.set("Content-Disposition", "inline; filename=\"snippet.txt\"")
+# .lpx / .plugin → plugin.txt
+response if ${url} ~= /\.(snippet|plugin|lpx)(\?.*)?$/i then response.header.set("Content-Disposition", "inline; filename=\"plugin.txt\"")
+
+# ─────────────────────────────────────────────────────────────
+#  MitM 说明（务必看）
+#  ────────────
+#  1. Rewrite 只能改「解密后」的 HTTPS 响应头。没解密 = 改不动，
+#     表现就是照旧弹下载条。
+#  2. 插件里的 [MitM] 只是往 Loon 的全局 MitM 名单里加域名，
+#     名单是合并的：主配置 / 别的插件里已有该域名，这里不写也生效。
+#  3. 但为了让这份插件拿到别人手机上也能直接工作，这里把常用域名
+#     都写上。遇到新的自定义域名，往 hostname 后面追加即可。
+#  4. Loon 主界面「MitM 总开关」必须打开 + CA 证书已安装，
+#     否则 hostname 写了也白写。
+#  5. 想覆盖任意域名可写 hostname = *（全部解密，耗电略增）。
+# ─────────────────────────────────────────────────────────────
+[MitM]
+hostname = raw.githubusercontent.com, gist.githubusercontent.com, yfamilys.com, kelee.one, ddgksf2013.top, *.pages.dev
