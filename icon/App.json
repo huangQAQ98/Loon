@@ -36,7 +36,15 @@
         },
         {
             "name": "贴吧",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/tieba.png" 
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/tieba.png"         
+        },
+        {
+            "name": "中国石油",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/zhongshiyou.png"         
+        },
+        {
+            "name": "中国石化",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/zhongshihua.png" 
         }
     ]
 }
