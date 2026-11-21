@@ -44,7 +44,11 @@
         },
         {
             "name": "中国石化",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/zhongshihua.png" 
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/zhongshihua.png"         
+        },
+        {
+            "name": "海角视频",
+            "url": "https://raw.githubusercontent.com/ios151/-/main/haijiao.png" 
         }
     ]
 }
