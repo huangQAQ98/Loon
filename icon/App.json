@@ -96,7 +96,15 @@
         },
         {
             "name": "pear",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/pear.png"        
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/pear.png"             
+        },
+        {
+            "name": "糖心",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/tangxi.png"           
+        },
+        {
+            "name": "pear",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/baoyu.png"      
         }
     ]
 }
