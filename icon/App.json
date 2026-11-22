@@ -1,6 +1,6 @@
 {
     "name": "西八图标库",
-    "description": "自制图标包丨更新时间：2026.11.21",
+    "description": "自制图标包丨更新时间：2026.11.22",
     "icons": [
         {
             "name": "LocalDevVPN",
@@ -48,7 +48,55 @@
         },
         {
             "name": "海角视频",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/haijiao.png" 
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/haijiao.png"        
+        },
+        {
+            "name": "妻友",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/qiyou.png"        
+        },
+        {
+            "name": "幻宇",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/huanyu.png"        
+        },
+        {
+            "name": "黄果",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/huangguo.png"        
+        },
+        {
+            "name": "黄果短剧",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/huangguo1.png"        
+        },
+        {
+            "name": "insav",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/insav.png"        
+        },
+        {
+            "name": "javhd",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/javhd.png"        
+        },
+        {
+            "name": "洛丽塔",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/luolita.png"        
+        },
+        {
+            "name": "porntube",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/poentube.png"        
+        },
+        {
+            "name": "妻社",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/qishe.png"        
+        },
+        {
+            "name": "加藤视频",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/jt.png"        
+        },
+        {
+            "name": "海角视频1",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/haijiao1.png"        
+        },
+        {
+            "name": "pear",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/pear.png"        
         }
     ]
 }
