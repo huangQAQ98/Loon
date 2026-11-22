@@ -103,8 +103,16 @@
             "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/tangxi.png"           
         },
         {
-            "name": "pear",
-            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/baoyu.png"      
+            "name": "鲍鱼",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/baoyu.png"            
+        },
+        {
+            "name": "黑料网",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/heiliao.png"            
+        },
+        {
+            "name": "黑料网",
+            "url": "https://raw.githubusercontent.com/huangQAQ98/Loon/refs/heads/main/icon/heiliao1.png"       
         }
     ]
 }
